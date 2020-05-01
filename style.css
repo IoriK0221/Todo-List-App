@@ -37,8 +37,7 @@ form button {
 }
 
 form button:hover {
-    background: #00809b;
-    color: #fff;
+    color: #007891;
 }
 
 .todo-container {
@@ -127,6 +126,5 @@ select {
 }
 
 .select:hover::after {
-    background: white;
-    color: #00809b;
+    background: #007891;
 }
