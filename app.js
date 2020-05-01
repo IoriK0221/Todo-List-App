@@ -50,7 +50,6 @@ function deleteCheck(e){
             todo.remove();
         })
     }
-
     //CHECK MARK
     if (item.classList[0] === "complete-btn") {
         const todo = item.parentElement;
@@ -60,5 +59,36 @@ function deleteCheck(e){
 
 function filterTodo(e) {
     const todos = todoList.childNodes;
+    todos.forEach(function(todo){
+        switch(e.target.value){
+            case "all":
+                todo.style.display = 'flex';
+                break;
+            case "completed":
+                if(todo.classList.contains('completed')) {
+                    todo.style.display = "flex";
+                } else {
+                    todo.style.display = "none";
+                }
+                break;
+            case "uncompleted":
+                if(!todo.classList.contains('completed')) {
+                    todo.style.display = "flex";
+                } else {
+                    todo.style.display = "none";
+                }
+                break;
+        }
+    });
+}
 
+function saveLocalTodos(todo) {
+    //CHECK - Do I already have thing in there?
+    if(localStorage.getItem('todos') === null) {
+        todos = [];
+    } else {
+        todos = JSON.parse(localStorage.getItem('todos'));
+    }
+    todos.push(todo);
+    localStorage.setItem('todos', JSON.stringify(todos));
 }
