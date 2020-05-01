@@ -31,7 +31,7 @@ form input, form button {
 }
 
 form button {
-    color: #00809b;
+    color: #006073;
     cursor: pointer;
     transition: all 0.1s ease;
 }
@@ -120,7 +120,7 @@ select {
     position: absolute;
     right: 0;
     top: -5px;
-    background: #00809b;
+    background: #006073;
     padding: 1rem;
     pointer-events: none;
     transition: all .2s ease;
